@@ -8,6 +8,6 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 3001
+EXPOSE 80
 
-CMD ["sh", "-c", "npx sequelize-cli db:migrate && npm run start"]
+CMD ["npm", "run", "dev"]
