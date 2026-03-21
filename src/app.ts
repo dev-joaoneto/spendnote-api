@@ -25,6 +25,6 @@ app.options("/*", async (request, reply) => {
   reply.send();
 });
 
-app.register(routes);
+app.register(routes, {prefix: "/api"});
 
 export default app;
