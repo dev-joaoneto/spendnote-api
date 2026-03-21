@@ -11,14 +11,20 @@ const app: FastifyInstance = Fastify({
 });
 
 app.register(cors, {
-	origin: [
+  origin: [
     "http://localhost:5175",
     "https://spendnote-frontend.xgg4n8.easypanel.host"
   ],
   credentials: true,
-	methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  preflight: true
 });
 
-app.register(routes, {prefix: "/api"});
+app.options("/*", async (request, reply) => {
+  reply.send();
+});
+
+app.register(routes);
 
 export default app;
