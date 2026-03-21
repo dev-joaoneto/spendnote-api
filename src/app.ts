@@ -11,14 +11,11 @@ const app: FastifyInstance = Fastify({
 });
 
 app.register(cors, {
-	origin: (origin, callback) => {
-    const allowed = process.env.CORS_ORIGIN?.replace(/\/$/, "");
-
-    if (!origin || origin === allowed) {
-      callback(null, true);
-      return;
-    }
-  },
+	origin: [
+    "http://localhost:5175",
+    "https://spendnote-frontend.xgg4n8.easypanel.host"
+  ],
+  credentials: true,
 	methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
 });
 
