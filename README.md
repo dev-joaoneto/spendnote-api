@@ -15,11 +15,11 @@ Um dos diferenciais do projeto é a utilização do Firebase Authentication, gar
 🚀 Tecnologias Utilizadas
 **Backend**
 
--Node.js
+- Node.js
 
--TypeScript
+- TypeScript
 
--Axios
+- Axios
 
 Banco de Dados
 
