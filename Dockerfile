@@ -11,4 +11,4 @@ RUN npx prisma generate
 
 EXPOSE 80
 
-CMD ["npm", "run", "dev"]
+CMD ["node", "dist/server.js"]
