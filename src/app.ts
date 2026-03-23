@@ -11,7 +11,10 @@ const app: FastifyInstance = Fastify({
 });
 
 app.register(cors, {
-	origin: true,
+	origin: [
+    "https://spendnote-frontend.xgg4n8.easypanel.host",
+    "http://localhost:3001",
+  ],
   credentials: true,
 	methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
 });
